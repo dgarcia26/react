@@ -14,16 +14,16 @@ const PeticionesApi = () => {
     let contador = 1;
 
     useEffect(() => {
-        // eslint-disable-next-line no-use-before-define
+        
         if(contador===1){
-            // eslint-disable-next-line no-use-before-define
+            
             obtenerPersonajes().then(()=>{
                 llenarSelect();
             })
-            // eslint-disable-next-line no-use-before-define
+            
             contador ++;
         }
-        
+        // eslint-disable-next-line
       },[]);
 
     const obtenerPersonajes = async (offset = 0, limite = 29) => {
