@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 
 
 const PeticionesApi = () => {
@@ -11,7 +11,17 @@ const PeticionesApi = () => {
     let totalItems = 100;
     const itemsPagina = 20;
     let cantPagina = 1;
+    let contador = 1;
 
+    useEffect(() => {
+        if(contador==1){
+            obtenerPersonajes().then(()=>{
+                llenarSelect();
+            })
+            contador = contador + 1;
+        }
+        
+      },[]);
     const obtenerPersonajes = async (offset = 0, limite = 29) => {
         try {
 
@@ -20,11 +30,11 @@ const PeticionesApi = () => {
             const data = await res.json();
             const results = await data.data.results;
             cantPagina = Math.ceil(totalItems / itemsPagina);
-            let elemento = document.getElementById("selector");
+            /*let elemento = document.getElementById("selector");
             while (elemento.firstChild) {
                 elemento.removeChild(elemento.firstChild);
             }
-            llenarSelect();
+            llenarSelect();*/
             setPersonajes(results)
         } catch (error) {
             console.log(error);
@@ -52,7 +62,7 @@ const PeticionesApi = () => {
     return (
         <>
             <h1>PETICIÓN AL API DE MARVEL</h1>
-            <button onClick={obtenerPersonajes}>Obtener Personajes</button>
+            
             <div class="paginator">
                 {
                     <select name="cars" id="selector" onChange={cambiarPagina}>
