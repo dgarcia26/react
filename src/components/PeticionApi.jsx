@@ -65,7 +65,7 @@ const PeticionesApi = () => {
 
     return (
         <>
-            <h1>PETICIÓN AL API DE MARVEL</h1>
+            <h1>PETICIÓN AL API DE MARVEL.</h1>
             
             <div class="paginator">
                 {
