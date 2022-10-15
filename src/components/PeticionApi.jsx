@@ -14,7 +14,7 @@ const PeticionesApi = () => {
     let contador = 1;
 
     useEffect(() => {
-        if(contador==1){
+        if(contador===1){
             obtenerPersonajes().then(()=>{
                 llenarSelect();
             })
