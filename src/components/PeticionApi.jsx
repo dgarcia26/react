@@ -14,10 +14,12 @@ const PeticionesApi = () => {
     let contador = 1;
 
     useEffect(() => {
+        /* eslint-disable no-eval */
         if(contador===1){
             obtenerPersonajes().then(()=>{
                 llenarSelect();
             })
+            /* eslint-disable no-eval */
             contador = contador + 1;
         }
         
