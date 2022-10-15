@@ -22,7 +22,7 @@ const PeticionesApi = () =>{
     return (
         <>
             <h1>PETICIÓN AL API DE MARVEL</h1>
-            <button onClick={obtenerPersonajes}>Traer Personajes</button>
+            <button onClick={obtenerPersonajes}>Obtener Personajes</button>
             <div class="paginator">
               
               
